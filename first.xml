@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<erddapDatasets>
+<!--                                                                                      
+ DISCLAIMER:                                                                             
+   The chunk of datasets.xml made by GenerageDatasetsXml isn't perfect.                  
+   YOU MUST READ AND EDIT THE XML BEFORE USING IT IN A PUBLIC ERDDAP.                    
+   GenerateDatasetsXml relies on a lot of rules-of-thumb which aren't always             
+   correct.  *YOU* ARE RESPONSIBLE FOR ENSURING THE CORRECTNESS OF THE XML               
+   THAT YOU ADD TO ERDDAP'S datasets.xml FILE.                                                                                                                                    
+ DIRECTIONS:                                                                             
+ * Read about this type of dataset in                                                    
+   http://coastwatch.pfeg.noaa.gov/erddap/download/setupDatasetsXml.html .               
+ * Read http://coastwatch.pfeg.noaa.gov/erddap/download/setupDatasetsXml.html#addAttributes       
+   so that you understand about sourceAttributes and addAttributes.                      
+ * Note: Global sourceAttributes and variable sourceAttributes are listed                
+   below as comments, for informational purposes only.                                   
+   ERDDAP combines sourceAttributes and addAttributes (which have                        
+   precedence) to make the combinedAttributes that are shown to the user.                
+   (And other attributes are automatically added to longitude, latitude,                 
+   altitude, depth, and time variables).                                                 
+ * If you don't like a sourceAttribute, override it by adding an                         
+   addAttribute with the same name but a different value                                 
+   (or no value, if you want to remove it).                                              
+ * All of the addAttributes are computer-generated suggestions. Edit them!               
+   If you don't like an addAttribute, change it.                                         
+ * If you want to add other addAttributes, add them.                                     
+ * If you want to change a destinationName, change it.                                   
+   But don't change sourceNames.                                                         
+ * You can change the order of the dataVariables or remove any of them.                  
+-->
+
+<!-- GENERAL INFORMATION                                                           
+The information in this file specifies which datasets your ERDDAP will serve.      
+The initial version of this file has a few examples which should work for you.     
+But after your initial experiments with ERDDAP,                                    
+you should replace them with information for your datasets.                        
+                                                                                   
+You can change this document (e.g., add datasets, change metadata) while ERDDAP is\
+ running.                                                                          
+The changes will be detected the next time this document is read                   
+(as often as loadDatasetsMinMinutes).                                              
+                                                                                   
+Each dataset has a reloadEveryNMinutes value (default = 10080 (one week)).         
+When this document is reread, datasets that haven't been been reloaded in          
+their reloadEveryNMinutes will be reloaded.                                        
+You only need to specify a reloadEveryNMinutes value if you anticipate that        
+the dataset will change periodically.                                              
+                                                                                   
+If this document has an xml error, processing will stop and an email               
+will be sent to emailEverythingTo as specified in setup.xml.                       
+                                                                                   
+If you want to remove a dataset while ERDDAP is running, add                       
+    active="false"                                                                 
+to the dataset tag.  For example,                                                  
+    <dataset type="EDDGridFromDap" datasetID="erdMHchla8day" active="false">       
+                                                                                   
+For more information, see                                                          
+https://coastwatch.pfel.noaa.gov/erddap/download/setupDatasetsXml.html             
+-->
+
+<!-- The tags below are described in setupDatasetsXml.html.                        
+     The defaults listed below are as of ERDDAP v2.00. -->
+<cacheMinutes />                                     <!-- default=60 -->
+<decompressedCacheMaxGB />                 <!-- default=10 -->
+<decompressedCacheMaxMinutesOld /> <!-- default=15 -->
+<drawLandMask />                                     <!-- "over", "under" (default\
+), "outline", or "off" -->
+<emailDiagnosticsToErdData />           <!-- "true (default) or "false" -->
+<graphBackgroundColor />                     <!-- 0xAARRGGBB, default is 0xffccccf\
+f -->
+<ipAddressMaxRequests />                     <!-- current default=7 -->
+<ipAddressMaxRequestsActive />         <!-- current default=2 -->
+<ipAddressUnlimited />                         <!-- default=(empty) -->
+<loadDatasetsMinMinutes />                 <!-- usually=default=15 -->
+<loadDatasetsMaxMinutes />                 <!-- default=60 -->
+<logLevel /> <!-- "warning" (fewest messages), "info" (default), or "all" (most me\
+ssages) -->
+<nGridThreads />                                     <!-- default=1 -->
+<nTableThreads />                                   <!-- default=1 -->
+<partialRequestMaxBytes />                 <!-- default=490000000 -->
+<partialRequestMaxCells />                 <!-- default=10000000 -->
+<slowDownTroubleMillis />                   <!-- default=1000 -->
+<unusualActivity />                               <!-- default=10000 -->
+<!-- <updateMaxEvents /> -->                               <!-- default=10 -->
+<!-- The defaults for the following tags are in messages.xml. -->
+<startHeadHtml5 />
+<endBodyHtml5 />
+<standardContact />
+<standardDataLicenses />
+<standardDisclaimerOfEndorsement />
+<standardDisclaimerOfExternalLinks />
+<standardGeneralDisclaimer />
+
+<standardLicense>
+These data were produced by NOAA and are not subject to copyright protection in the United States. NOAA waives any potential copyright and related rights in these data worldwide through the Creative Commons Zero 1.0 Universal Public Domain Dedication (CC0-1.0).
+</standardLicense>
+
+<standardPrivacyPolicy>
+&lt;br&gt;&amp;nbsp;                                                               
+&lt;hr&gt;
+&lt;h2&gt;&lt;a class="selfLink" id="privacyPolicy" href="#privacyPolicy" rel="hel\
+p"&gt;Privacy Policy&lt;/a&gt;&lt;/h2&gt;                                          
+ERDDAP follows                                                                     
+&lt;a rel="bookmark" href="https://www.noaa.gov/protecting-your-privacy"           
+  &gt;NOAA's Privacy Policy Guidelines&lt;/a&gt;.                                  
+</standardPrivacyPolicy>
+
+<startBodyHtml5>
+&lt;body&gt;
+&lt;table class="compact nowrap" style="width:100%; background-color:#323C46;"&gt;
+  &lt;tr&gt;
+    &lt;td style="text-align:center; width:80px;"&gt;&lt;a rel="bookmark"          
+      href="https://www.pmel.noaa.gov/"&gt;&lt;img                                 
+      title="Pacific Marine Environmental Laboratory"                              
+      src="&amp;erddapUrl;/images/noaapmel_lockupfinal.png" alt="NOAA PMEL"              
+      style="vertical-align:middle;width:140px;margin: 10px 20px 10px 20px;"&gt;&lt;/a&gt;&lt;/td&gt;
+    &lt;td style="text-align:left; font-size:x-large; color:#FFFFFF; "&gt;
+      &lt;strong&gt;Easy Access to PMEL Scientific Data&lt;/strong&gt;
+      &lt;br&gt;&lt;small&gt;&lt;small&gt;&lt;small&gt;The Pacific Marine Environmental Laboratory's ERDDAP data server for public access to scientific data
+ &lt;/small&gt;&lt;/small&gt;&lt;/small&gt;
+      &lt;/td&gt;
+    &lt;td style="text-align:right; font-size:small; color:#FFFFFF; "&gt;
+      &amp;language; &amp;nbsp; &amp;nbsp;                                         
+      &lt;br&gt;
+      &lt;a title="National Oceanic and Atmospheric Administration" rel="bookmark"
+      href="https://www.noaa.gov" class="bannerlink"&gt;NOAA&lt;/a&gt;
+      &lt;a title="Oceanic and Atmospheric Research" rel="bookmark"                
+      href="https://research.noaa.gov/" class="bannerlink"&gt;OAR&lt;/a&gt;
+      &lt;a title="Pacific Marine Environmental Laboratory" rel="bookmark"
+      href="https://www.pmel.noaa.gov/" class="bannerlink"&gt;PMEL&lt;/a&gt;
+      &amp;nbsp; &amp;nbsp;                                                        
+      &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</startBodyHtml5>
+
+<theShortDescriptionHtml>
+&lt;h1&gt;The PMEL ERDDAP&lt;/h1&gt;
+&amp;erddapIs;                                                                     
+&amp;thisParticularErddap;                                                         
+[standardShortDescriptionHtml]                                                     
+</theShortDescriptionHtml>
+
+<!-- If you want to refuse requests from certain clients                           
+  (e.g., to fend off a Denial of Service attack or an overly zealous web robot),   
+  add their numeric IP address (e.g., 123.45.67.89) to this comma-separated list. 
+  You can also replace the last number in an IP address with * to block 0-255 (e.g\
+., 123.45.67.*).                                                                   
+  See your ERDDAP daily report for a list/tally of the most active requesters. -->
+<requestBlacklist />
+
+
+<!-- If you want to prevent specific people from using the email/URL subscription  
+     system, add their email addresses to this comma-separated list.               
+     You can use the name "*" to blacklist an entire domain, e.g., *@example.com .
+-->
+<subscriptionEmailBlacklist>your.email@yourinstitution.edu, some.name@company.com,\
+                                                                                   
+another.name@company.com, *@example.com</subscriptionEmailBlacklist>
+
+<!-- NOTE! Since JSON Lines CSV files have no metadata, you MUST edit the chunk    
+  of datasets.xml below to add all of the metadata (especially "units"). --> 
