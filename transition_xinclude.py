@@ -3,8 +3,11 @@
 
 import os
 
+#change this to the pathname to your ERDDAP directory
+erddap_path = '~/erddap_[ERDDAP_NAME]'
+
 #reads through all dataset xml fragments
-ds_dir = '~/erddap_[ERDDAP_NAME]/datasets_xml_fragments/'
+ds_dir = erddap_path + '/datasets_xml_fragments/'
 for root, dirs, dsfiles in os.walk(ds_dir):
     #print(dsfiles)
     continue
@@ -16,6 +19,6 @@ for f in dsfiles:
     newlines.append(newline)
 
 #creates the file xinclude_xml.xml and writes each XInclude-styled newline as a line in the file
-with open('~/erddap_[ERDDAP_NAME]/xinclude_xml.xml','w') as outXML:
+with open(erddap_path + '/xinclude_xml.xml','w') as outXML:
     for line in newlines:
         outXML.write(line)
