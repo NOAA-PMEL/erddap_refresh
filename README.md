@@ -18,7 +18,7 @@ That's it! Now your ERDDAP is up-to-date and easier to use. The next time you ne
 
 ## To update your ERDDAP (the outside):
 <ol>
-  <li><p>The first and easiest file to edit is first.xml, found in ~/erddap_[ERDDAP_NAME]. You can explore the example for the screenshot above. 
+  <li><p>The first and easiest file to edit is first.xml, found in ~/erddap_[ERDDAP_NAME]. You can explore <a href="https://github.com/e-koukel/erddap_instruction/blob/main/first.xml">the example</a> for the screenshot above. 
     <ol>
       <li>The most prominent item to edit in your ERDDAP is the banner at the top of the screen that runs across all pages of your ERDDAP. In first.xml, scroll down to <code>&lt;startBodyHtml5&gt;</code>. You can edit <code>background-color</code> in the second line (the first <code>&lt;table&gt;</code> element). This defaults to #128CB5 and is the color of the banner that spans across the top of each page on your ERDDAP.</li>
       <li>Next, you can edit the <code>&lt;td&gt;</code> elements, starting on the fourth line of <code>&lt;startBodyHtml5&gt;</code>. The first <code>&lt;td&gt;</code> element determines the size and image on the far left of the ERDDAP banner. You can change the hyperlink, image, image size, image margin, and alternate text of this image in this element. To change the image used, edit <code>src="&erddapUrl;/images/noaab.png"</code> to be the name of the actual png that you want, which is located at ~/tomcat/webapps/erddap/images/.</li>
