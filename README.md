@@ -1,6 +1,6 @@
 # Refresh your ERDDAP experience
 
-This how-to guide will take your ERDDAP from the blue-and-orange default to something streamlined, specific, and useful (just like this!):
+This how-to guide will take your ERDDAP from the blue-and-yellow default to something streamlined, specific, and useful (just like this!):
 
 [<img src="https://github.com/user-attachments/assets/7c0341b7-635a-4640-b884-034b4cc9a2c4"/>](https://data.pmel.noaa.gov/pmel/erddap/index.html)
 
