@@ -1,9 +1,13 @@
 #!/bin/bash
+
+#change this to the pathname to your ERDDAP directory
+erddap_path='~/erddap_[ERDDAP_NAME]'
+
 #runs transitiondatasets_xinclude.py
-python ~/erddap_[ERDDAP_NAME]/transitiondatasets_xinclude.py
+python $erddap_path/transitiondatasets_xinclude.py
 
 #concatenates first.xml, xinclude_xml.xml (the interior of the datasets.xml), and last.xml into a single datasetsxoncat.xml
-cat ~/erddap_[ERDDAP_NAME]/first.xml ~/erddap_[ERDDAP_NAME]/xinclude_xml.xml ~/erddap_[ERDDAP_NAME]/last.xml > ~/erddap_[ERDDAP_NAME]/datasetsconcat.xml
+cat $erddap_path/first.xml $erddap_path/xinclude_xml.xml $erddap_path/last.xml > $erddap_path/datasetsconcat.xml
 
 #copies datasetsconcat.xml to your real datasets.xml
-cp ~/erddap_[ERDDAP_NAME]/datasetsconcat.xml ~/tomcat/content/erddap/datasets.xml
+cp $erddap_path/datasetsconcat.xml ~/tomcat/content/erddap/datasets.xml
