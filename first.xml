@@ -158,5 +158,3 @@ ERDDAP follows
                                                                                    
 another.name@company.com, *@example.com</subscriptionEmailBlacklist>
 
-<!-- NOTE! Since JSON Lines CSV files have no metadata, you MUST edit the chunk    
-  of datasets.xml below to add all of the metadata (especially "units"). --> 
