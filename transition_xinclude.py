@@ -4,7 +4,7 @@
 import os
 
 #change this to the pathname to your ERDDAP directory
-erddap_path = '~/[ERDDAP_NAME]_erddap'
+erddap_path = '~/erddap_[ERDDAP_NAME]'
 
 #reads through all dataset xml fragments
 ds_dir = erddap_path + '/datasets_xml_fragments/'
