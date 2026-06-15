@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #change this to the pathname to your ERDDAP directory
-erddap_path='~/[ERDDAP_NAME]_erddap'
+erddap_path='~/erddap_[ERDDAP_NAME]'
 
 #runs transitiondatasets_xinclude.py
 python $erddap_path/transitiondatasets_xinclude.py
